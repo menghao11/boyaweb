@@ -70,6 +70,23 @@ form p > * {
     float: left;
 }
 
+#btn_register {
+    font-size: 14px;
+    font-family: 宋体;
+
+    width: 120px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+
+    color: white;
+    background-color: #3BD9FF;
+    border-radius: 6px;
+    border: 0;
+
+    float: left;
+}
+
 #forget_pwd {
     font-size: 12px;
     color: black;

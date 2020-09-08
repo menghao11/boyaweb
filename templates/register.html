@@ -2,24 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>登录页面</title>
- 
+    <title>注册页面</title>
+
     <link rel="stylesheet" type="text/css" href="static/login.css"/>
 </head>
- 
+
 <body>
-<div id="login_frame">
- 
+<div id="register_frame">
+
     <p id="image_logo"><img src="static/images/login/fly.png"></p>
-    <form action="/loginaction" method="post">
+    <form action="/registeraction" method="post">
         <p><label class="label_input">用户名</label><input type="text" name="username" id="username" class="text_field"/></p>
         <p><label class="label_input">密码</label><input type="password" name="password" id="password" class="text_field"/></p>
         <div id="login_control">
-            <button type="submit" id="btn_login" class="btn btn-lg btn-primary btn-block" >登录</button>
-            <a id="register" href="register.html">新用户注册</a>
-            <a id="forget_pwd" href="forget_pwd.html">忘记密码？</a>
+            <button type="submit" id="btn_register" class="btn btn-lg btn-primary btn-block" >注册</button>
         </div>
     </form>
 </div>
- 
+
 </body>
