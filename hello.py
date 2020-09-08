@@ -3,14 +3,14 @@ import requests
 import json
 import sys
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="./static")
 sys.path.append('../')
 
 @app.route('/')
 def hello_world():
     return render_template('login.html')
 
-@app.route('/welcome/')
+@app.route('/welcome')
 def build():
     return render_template('welcome.html')
 
@@ -19,9 +19,9 @@ def Login():
     user = request.form.get('username')
     password = request.form.get('password')
     if user == 'admin' and password == 'root':
-        return redirect("/welcome/")
+        return redirect("/welcome")
     else:
         return hello_world()
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=9000)
