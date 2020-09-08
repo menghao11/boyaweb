@@ -4,7 +4,7 @@ body {
     background-repeat: no-repeat;
 }
 
-#login_frame {
+#register_frame {
     width: 400px;
     height: 260px;
     padding: 13px;
@@ -53,7 +53,7 @@ form p > * {
     border: 0;
 }
 
-#btn_login {
+#btn_register {
     font-size: 14px;
     font-family: 宋体;
 
@@ -68,21 +68,6 @@ form p > * {
     border: 0;
 
     float: left;
-}
-
-#forget_pwd {
-    font-size: 12px;
-    color: black;
-    text-decoration: none;
-    position: relative;
-    float: right;
-    top: 5px;
-
-}
-
-#forget_pwd:hover {
-    color: black;
-    text-decoration: underline;
 }
 
 #login_control {
