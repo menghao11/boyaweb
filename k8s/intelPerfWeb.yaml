@@ -1,0 +1,38 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: intelperfweb
+spec:
+  selector:
+    matchLabels:
+      app: intelperfweb
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: intelperfweb
+    spec:
+      containers:
+      - name: intelperfweb
+        image: intelperfweb:1.0.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: intelperfweb
+  namespace: default
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 32600
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: intelperfweb
+  sessionAffinity: None
+  type: NodePort
