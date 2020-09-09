@@ -10,7 +10,7 @@ sys.path.append('../')
 
 @app.route('/')
 def hello_world():
-    return render_template('login.html')
+    return render_template('index.html')
 
 @app.route('/welcome')
 def build():
@@ -19,6 +19,10 @@ def build():
 @app.route('/register.html')
 def register():
     return render_template('register.html')
+
+@app.route('/index.html')
+def home():
+    return render_template('index.html')
 
 @app.route("/loginaction", methods=['post'])
 def Login():
