@@ -60,21 +60,10 @@
             <img class="introduce_item_img" src="static/images/welcome/xinku.jpg" alt="">
         </div>
     </div>
-    <audio autoplay="autoplay" id="audio" loop="loop">
-        <source src="./video/music.mp3" type="audio/MP3">
-
-    </audio>
-    <img class="music_img" src="./img/music_img.png" alt="">
+    <video muted src="static/images/welcome/music.mp3" autoplay loop></video>
+    <img class="music_img" src="static/images/welcome/music.png" alt="">
 </div>
 
 </body>
-<script>
-    let mucics = document.getElementById('audio')
-    document.body.addEventListener('mousemove', function() {
-        setTimeout(() => {
-            mucics.play();
-    }, 2000);
-    }, false);
-</script>
 
 </html>

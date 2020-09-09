@@ -242,7 +242,7 @@ audio {
 
 @keyframes muscis {
     from {
-        transform: rotate (0deg);
+        transform: rotate(0deg);
         opacity: .6;
     }
     to {
