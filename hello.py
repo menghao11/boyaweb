@@ -16,6 +16,10 @@ def hello_world():
 def build():
     return render_template('welcome.html')
 
+@app.route('/welcome.html')
+def welcome():
+    return render_template('welcome.html')
+
 @app.route('/register.html')
 def register():
     return render_template('register.html')

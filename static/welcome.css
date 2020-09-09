@@ -76,8 +76,8 @@ span {
     top: 300px;
     margin: auto;
     bottom: 0;
-    color: #fff;
-    font-size: 24px;
+    color: greenyellow;
+    font-size: 50px;
     font-weight: 500;
 }
 
@@ -90,8 +90,8 @@ span {
     top: 350px;
     margin: auto;
     bottom: 0;
-    color: #fff;
-    font-size: 20px;
+    color: blueviolet;
+    font-size: 40px;
     font-weight: 500;
 }
 
