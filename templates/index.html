@@ -1,316 +1,425 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>主页</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--Custom Theme files-->
-<link href="static/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="static/style.css" type="text/css" rel="stylesheet" media="all">
-<link href="static/index.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="static/swipebox.css">
-<!--//Custom Theme files-->
-<!--js-->
-<script src="static/js/jquery-1.11.1.min.js"></script>
-<!--//js-->
-<!--start-smooth-scrolling-->
-<script type="text/javascript" src="static/js/move-top.js"></script>
-<script type="text/javascript" src="static/js/easing.js"></script>
-<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
-				event.preventDefault();
-		
-		$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-			});
-		});
+<title>博雅教育</title>
+<link rel="stylesheet" type="text/css" href="static/index.css">
+<script type="text/javascript" src="static/js/main.js"></script>
+<script>
+$(document).ready(function(){
+
+	$(".prev,.next").hover(function(){
+		$(this).stop(true,false).fadeTo("show",0.9);
+	},function(){
+		$(this).stop(true,false).fadeTo("show",0.4);
+	});
+
+	$(".banner-box").slide({
+		titCell:".hd ul",
+		mainCell:".bd ul",
+		effect:"fold",
+		interTime:3500,
+		delayTime:500,
+		autoPlay:true,
+		autoPage:true,
+		trigger:"click"
+	});
+
+});
+
+//banner
+$(function(){
+
+	jQuery(".group_box").slide({ titCell:".group_tab ul li", mainCell:".group_box_main", effect:"fold", trigger:"mouseover" });
+	//推荐资料
+
+})
 </script>
-<!--//end-smooth-scrolling-->	
+<!--新闻版块切换js代码-->
+<script type="text/javascript">
+   function xwView(id)
+     {
+       document.getElementById("xw1").className="";
+       document.getElementById("xw2").className="";
+       document.getElementById("xw_menu1").style.display="none";
+       document.getElementById("xw_menu2").style.display="none";
+       document.getElementById("xw"+id).className="xw_on";
+       document.getElementById("xw_menu"+id).style.display="block";
+}
+</script>
+<!--博乐名师版块切换js代码-->
+<script type="text/javascript">
+   function blmsView(id)
+     {
+       document.getElementById("blms1").className="";
+       document.getElementById("blms2").className="";
+	   document.getElementById("blms3").className="";
+       document.getElementById("blms_menu1").style.display="none";
+       document.getElementById("blms_menu2").style.display="none";
+	   document.getElementById("blms_menu3").style.display="none";
+       document.getElementById("blms"+id).className="blms_on";
+       document.getElementById("blms_menu"+id).style.display="block";
+}
+</script>
+<!--星级学员版块切换js代码-->
+<script type="text/javascript">
+   function xjxyView(id)
+     {
+       document.getElementById("xjxy1").className="";
+       document.getElementById("xjxy2").className="";
+	   document.getElementById("xjxy3").className="";
+       document.getElementById("xjxy_menu1").style.display="none";
+       document.getElementById("xjxy_menu2").style.display="none";
+	   document.getElementById("xjxy_menu3").style.display="none";
+       document.getElementById("xjxy"+id).className="xjxy_on";
+       document.getElementById("xjxy_menu"+id).style.display="block";
+}
+</script>
 </head>
 <body>
-	<!--banner-->
-	<div class="banner">
-		<div class="header"><!--header-->
-			<div class="container">		
-				<nav class="navbar navbar-default">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<h1><a  href="index.html">博雅</a></h1>
-					</div>
-					<!--navbar-header-->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="welcome.html" class="active">主页</a></li>
-							<li><a href="#about" class="scroll">精品课程</a></li>
-							<li><a href="#team" class="scroll">教师风采</a></li>
-							<li><a href="#contact" class="scroll">联系我们</a></li>
-						</ul>	
-						<div class="clearfix"> </div>	
-					</div>
-				</nav>
-			</div>
-			<div class="cd-main-header">
-				<ul class="cd-header-buttons">
-					<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
-				</ul> <!-- cd-header-buttons -->
-			</div>
-			<div id="cd-search" class="cd-search">
-				<form action="#" method="post">
-					<input name="Search" type="search" placeholder="Search...">
-				</form>
-			</div>
-		</div>
-		<!--//header-->
-		<!--banner-text-->
-		<div class="banner-text">
-			<!--banner Slider starts Here-->
-			<script src="static/js/responsiveslides.min.js"></script>
-			<script>
-				// You can also use "$(window).load(function() {"
-				$(function () {
-				  // Slideshow 3
-				  $("#slider3").responsiveSlides({
-					auto: true,
-					pager: true,
-					nav: false,
-					speed: 500,
-					namespace: "callbacks",
-					before: function () {
-					  $('.events').append("<li>before event fired.</li>");
-					},
-					after: function () {
-					  $('.events').append("<li>after event fired.</li>");
-					}
-				  });
-			
-				});
-			</script>
-			<!--//End-slider-script-->
-			<div  id="top" class="callbacks_container">
-				<ul class="rslides" id="slider3">
-					<li>
-						<h2>自然拼读<br>学习单词拼读基本规则</h2>
-						<p>让孩子看到单词即可马上读出正确发音.</p>
-						<a class="more hvr-bounce-to-right" href="#" data-toggle="modal" data-target="#myModal">Register Now</a>
-					</li>
-					<li>
-						<h3><br>剑桥英语</h3>
-						<p>孩子英语能力提升必备</p>
-						<a class="more hvr-bounce-to-right" href="#" data-toggle="modal" data-target="#myModal">Register Now</a>
-					</li>
-					<li>
-						<h3>课程同步辅导<br>同步课程进度</h3>
-						<p> 跟随学校课堂进度,给孩子查漏补缺. </p>
-						<a class="more hvr-bounce-to-right" href="#" data-toggle="modal" data-target="#myModal">Register Now</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!--//banner-text-->
-	</div>
-	<!--//banner-->
-	<!--about-->
-	<div id="about" class="about">
-		<div class="container">
-			<div class="title">
-				<h3>精品课程</h3>
-				<p>学生反馈效果优异，极大的提高学习成绩。</p>
-			</div>
-			<div class="about-row">
-				<div class="col-md-3 about-grids">
-					<span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span>
-					<h4>自然拼读</h4>
-					<p>让孩子看到单词即可马上读出正确发音
-						轻松解决发音问题</p>
-					<h6> </h6>
-				</div>
-				<div class="col-md-3 about-grids">
-					<span class="glyphicon glyphicon-user effect-1" aria-hidden="true"></span>
-					<h4>看图写画</h4>
-					<p>帮助孩子建立叙述能力
-						做到有话可说,叙事详尽逻辑清晰</p>
-					<h6> </h6>
-				</div>
-				<div class="col-md-3 about-grids">
-					<span class="glyphicon glyphicon-list-alt effect-1" aria-hidden="true"></span>
-					<h4>剑桥英语</h4>
-					<p>孩子英语能力提升必备
-						帮助孩子建立完善的英语知识体系</p>
-					<h6> </h6>
-				</div>
-				<div class="col-md-3 about-grids">
-					<span class="glyphicon glyphicon-check effect-1" aria-hidden="true"></span>
-					<h4>数学同步课程</h4>
-					<p>同步中找不同,帮助孩子建立数学逻辑
-						更好的将所学的知识应用在解决数学问题中</p>
-					<h6> </h6>
-				</div>
-				<div class="clerfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!--//about-->
-	<!--team-->
-	<div class="team" id="team">
-		<div class="container">
-			<div class="title">
-				<h3>教师风采</h3>
-				<p>我们拥有完整教辅体系和优质的金牌讲师. 欢迎有识之士加入我们的团队. </p>
-			</div>
-			<div class="team-row">
-				<div class="col-md-3 team-grids">
-					<img class="img-responsive" src="static/images/teacher/img1.jpg" alt="">
-					<div class="captn">
-						<h4>缑茹</h4>
-						<p>校长</p>
-						<div class="social-icons">
-							<ul>
-								<li><a href="#"> </a></li>
-								<li><a href="#" class="fb"> </a></li>
-								<li><a href="#" class="gp"> </a></li>
-								<li><a href="#" class="drb"> </a></li>
-							</ul>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 team-grids">
-					<img class="img-responsive" src="static/images/teacher/img2.jpg" alt="">
-					<div class="captn">
-						<h4>马益江</h4>
-						<p>副校长</p>
-						<div class="social-icons">
-							<ul>
-								<li><a href="#"> </a></li>
-								<li><a href="#" class="fb"> </a></li>
-								<li><a href="#" class="gp"> </a></li>
-								<li><a href="#" class="drb"> </a></li>
-							</ul>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-				</div>	
-				<div class="col-md-3 team-grids">
-					<img class="img-responsive" src="static/images/teacher/img3.jpg" alt="">
-					<div class="captn">
-						<h4>张xx</h4>
-						<p>老师</p>
-						<div class="social-icons">
-							<ul>
-								<li><a href="#"> </a></li>
-								<li><a href="#" class="fb"> </a></li>
-								<li><a href="#" class="gp"> </a></li>
-								<li><a href="#" class="drb"> </a></li>
-							</ul>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 team-grids">
-					<img class="img-responsive" src="static/images/teacher/img4.jpg" alt="">
-					<div class="captn">
-						<h4>张xx</h4>
-						<p>老师</p>
-						<div class="social-icons">
-							<ul>
-								<li><a href="#"> </a></li>
-								<li><a href="#" class="fb"> </a></li>
-								<li><a href="#" class="gp"> </a></li>
-								<li><a href="#" class="drb"> </a></li>
-							</ul>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-				</div>	
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!--contact-->
-	<div class="contact" id="contact">
-		<div class="container">
-			<div class="title">
-				<h3>联系我们</h3>
-				<p>如有问题，欢迎来电咨询或者来访。 </p>
-			</div>
-			<div class="contact-grids">
-				<div class="col-md-5 address">
-					<h4>联系方式</h4>
-					<div class="address-row">
-						<div class="col-md-2 address-left">
-							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-						</div>
-						<div class="col-md-10 address-right">
-							<h5>欢迎来访</h5>
-							<p>陕西省西安市雁塔区金地西沣公元二期1号楼二单元301室 </p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="address-row">
-						<div class="col-md-2 address-left">
-							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
-						</div>
-						<div class="col-md-10 address-right">
-							<h5>联系我们</h5>
-							<p>15389040591</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--//contact-->
-	<!--smooth-scrolling-of-move-up-->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-			var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-			};
-			*/
-			
-			$().UItoTop({ easingType: 'easeOutQuart' });
-			
-		});
-	</script>
-	<!--//smooth-scrolling-of-move-up-->
-	<!-- Include jQuery & Filterizr -->
-    <script src="static/js/jquery.filterizr.js"></script>
-    <script src="static/js/jquery.filterizr.js"></script>
-    <script src="static/js/controls.js"></script>
-    <!-- Kick off Filterizr -->
-    <script type="text/javascript">
-        $(function() {
-            //Initialize filterizr with default options
-            $('.filtr-container').filterizr();
-        });
-    </script>
-	<!--//gallery-->
-	<!-- swipe box js -->
-	<script src="static/js/jquery.swipebox.min.js"></script>
-	<script type="text/javascript">
-			jQuery(function($) {
-				$(".swipebox").swipebox();
-			});
-	</script>
-	<!-- //swipe box js -->
-	<!--search jQuery-->
-	<script src="static/js/main.js"></script>
-	<!--//search jQuery-->
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="static/js/bootstrap.js"></script>
+<div class="top">
+  <div class="top_con clear">
+    <div class="logo mt10 left"><img src="static/images/index/logo.png" alt="博雅教育" /></div>
+    <div class="search mt20 right clear">
+      <div class="tel right">联系电话：<br />
+        15389040591</div>
+    </div>
+  </div>
+</div>
+<!-- top end -->
+<div class="nav">
+  <div class="nav_con">
+    <ul class="clear">
+      <li class="cur"><a href="index.html">首页</a></li>
+      <li><a href="xxkc.html">小学课程</a></li>
+      <li><a href="xxkc.html">初中课程</a></li>
+      <li><a href="jsfc.html">博雅名师</a></li>
+      <li><a href="blzx.html">教育新闻</a></li>
+      <li><a href="zlxz.html">资料下载</a></li>
+      <li><a href="bljj.html">了解博雅</a></li>
+      <li><a href="zxzx.html">联系我们</a></li>
+    </ul>
+  </div>
+</div>
+<!-- nav end -->
+<div class="banner">
+  <div id="banner_show" class="banner_show">
+   <a class="bannger_inbox" href="#"><img src="static/images/index/banner.jpg" width="1920" height="500"></a>
+  </div>
+</div>
+<!-- banner end -->
+<div class="content">
+  <div class="gxhkc mt25">
+    <h2 class="bt_tit"><img src="static/images/index/gxkc_tit.png" alt="个性化课程" /></h2>
+    <div class="gxhkc_box">
+      <ul class="clear">
+        <li> <img src="static/images/index/kc_pic1.jpg" alt="" />
+          <div class="kc_txt"> <span class="xian"></span>
+            <h3>自然拼读</h3>
+            <p class="f16">经典课程</p>
+            <p class="f14 mt15">名师教学，全程监督<br />
+              让你的孩子拼读能力突飞猛进</p>
+          </div>
+        </li>
+        <li> <img src="static/images/index/kc_pic2.jpg" alt="" />
+          <div class="kc_txt"> <span class="xian"></span>
+            <h3>剑桥英语</h3>
+            <p class="f16">精品课程</p>
+            <p class="f14 mt15">多年经验，品质保障<br />
+              让你的孩子快速掌握英语技巧</p>
+          </div>
+        </li>
+        <li> <img src="static/images/index/kc_pic3.jpg" alt="" />
+          <div class="kc_txt"> <span class="xian"></span>
+            <h3>看图写话</h3>
+            <p class="f16">金典课程</p>
+            <p class="f14 mt15">快速适应，下笔如神<br />
+              让你的孩子从此作文不犯愁</p>
+          </div>
+        </li>
+        <li style="margin:0;"> <img src="static/images/index/kc_pic4.jpg" alt="" />
+          <div class="kc_txt"> <span class="xian"></span>
+            <h3>1对1课程</h3>
+            <p class="f16">经典VIP课程</p>
+            <p class="f14 mt15">名师教学，全程监督<br />
+              让你的孩子放心接受教育</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- gxhkc end -->
+  <div class="box mt25 clear">
+    <div class="xwzx left">
+      <div class="bt_tit clear">
+        <h2 class="left"><img src="static/images/index/gxkc_tit.png" alt="个性化课程" /></h2>
+        <div class="xw_nav right">
+          <ul class="clear">
+            <li id="xw1" class="xw_on" onmouseover="xwView(1)">博雅新闻</li>
+            <li id="xw2" onmouseover="xwView(2)">教育资讯</li>
+          </ul>
+        </div>
+        <!--/*-------xw_nav结束-------*/-->
+      </div>
+      <div class="xw_menu">
+        <div class="xw_list" id="xw_menu1" style="display:block;">
+          <ul>
+            <li>
+              <div class="xw_img left"><a href="subzx.html"><img src="images/news_img.jpg" alt="" /></a></div>
+              <div class="xw_txt right">
+                <h2><a href="subzx.html">博雅十一优惠活动</a></h2>
+                <p>近日，一张纽约皇后区法拉盛街头的父子背影照在网上被疯狂转发，图中华人父亲的头发和衬衫均被雨淋湿，但他依然将唯一的伞遮在儿子头上，这令无数网友感动....</p>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li>
+              <div class="xw_img left"><a href="subzx.html"><img src="images/news_img.jpg" alt="" /></a></div>
+              <div class="xw_txt right">
+                <h2><a href="subzx.html">樊登读书会本周正式入驻</a></h2>
+                <p>近日，一张纽约皇后区法拉盛街头的父子背影照在网上被疯狂转发，图中华人父亲的头发和衬衫均被雨淋湿，但他依然将唯一的伞遮在儿子头上，这令无数网友感动....</p>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li>
+              <div class="xw_img left"><a href="subzx.html"><img src="images/news_img.jpg" alt="" /></a></div>
+              <div class="xw_txt right">
+                <h2><a href="subzx.html">父亲为孩子撑伞引议 专家称要教孩子回馈爱</a></h2>
+                <p>近日，一张纽约皇后区法拉盛街头的父子背影照在网上被疯狂转发，图中华人父亲的头发和衬衫均被雨淋湿，但他依然将唯一的伞遮在儿子头上，这令无数网友感动....</p>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li style="border:none; padding:0; margin:0;">
+              <div class="xw_img left"><a href="subzx.html"><img src="images/news_img.jpg" alt="" /></a></div>
+              <div class="xw_txt right">
+                <h2><a href="subzx.html">父亲为孩子撑伞引议 专家称要教孩子回馈爱</a></h2>
+                <p>近日，一张纽约皇后区法拉盛街头的父子背影照在网上被疯狂转发，图中华人父亲的头发和衬衫均被雨淋湿，但他依然将唯一的伞遮在儿子头上，这令无数网友感动....</p>
+              </div>
+              <div class="clear"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="xw_list" id="xw_menu2" style="display:none;">
+          <ul>
+            <li>
+              <div class="xw_img left"><a href="subzx.html"><img src="images/news_img.jpg" alt="" /></a></div>
+              <div class="xw_txt right">
+                <h2><a href="subzx.html">父亲为孩子撑伞引议 专家称要教孩子回馈爱</a></h2>
+                <p>近日，一张纽约皇后区法拉盛街头的父子背影照在网上被疯狂转发，图中华人父亲的头发和衬衫均被雨淋湿，但他依然将唯一的伞遮在儿子头上，这令无数网友感动....</p>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li>
+              <div class="xw_img left"><a href="subzx.html"><img src="images/news_img.jpg" alt="" /></a></div>
+              <div class="xw_txt right">
+                <h2><a href="subzx.html">父亲为孩子撑伞引议 专家称要教孩子回馈爱</a></h2>
+                <p>近日，一张纽约皇后区法拉盛街头的父子背影照在网上被疯狂转发，图中华人父亲的头发和衬衫均被雨淋湿，但他依然将唯一的伞遮在儿子头上，这令无数网友感动....</p>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li>
+              <div class="xw_img left"><a href="subzx.html"><img src="images/news_img.jpg" alt="" /></a></div>
+              <div class="xw_txt right">
+                <h2><a href="subzx.html">父亲为孩子撑伞引议 专家称要教孩子回馈爱</a></h2>
+                <p>近日，一张纽约皇后区法拉盛街头的父子背影照在网上被疯狂转发，图中华人父亲的头发和衬衫均被雨淋湿，但他依然将唯一的伞遮在儿子头上，这令无数网友感动....</p>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li style="border:none; padding:0; margin:0;">
+              <div class="xw_img left"><a href="subzx.html"><img src="images/news_img.jpg" alt="" /></a></div>
+              <div class="xw_txt right">
+                <h2><a href="subzx.html">父亲为孩子撑伞引议 专家称要教孩子回馈爱</a></h2>
+                <p>近日，一张纽约皇后区法拉盛街头的父子背影照在网上被疯狂转发，图中华人父亲的头发和衬衫均被雨淋湿，但他依然将唯一的伞遮在儿子头上，这令无数网友感动....</p>
+              </div>
+              <div class="clear"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--xw_menu end-->
+    </div>
+    <!-- xwzx end -->
+    <div class="kcyy right">
+      <h2>课程预约</h2>
+      <div class="yy_list">
+        <p>
+          <label>姓名：</label>
+          <input name="" type="text" class="input_txt" value="请输入你的姓名！" />
+        </p>
+        <p>
+          <label>电话：</label>
+          <input name="" class="input_txt" type="text" value="请输入你的电话号码！" />
+        </p>
+        <p>
+          <label>年级：</label>
+          <select name="">
+            <option>请选择你所在的年级</option>
+            <option>小学</option>
+            <option>初中</option>
+          </select>
+        </p>
+        <p>
+          <label>科目：</label>
+          <select name="">
+            <option>请选择你所学的科目</option>
+            <option>英语</option>
+            <option>数学</option>
+            <option>语文</option>
+          </select>
+        </p>
+        <p>
+          <label>备注：</label>
+          <textarea name="" cols="" rows="">请输入你的电话号码！</textarea>
+        </p>
+        <p>
+          <input name="" value="立即预约" type="submit" class="yy_btn" />
+        </p>
+      </div>
+    </div>
+    <!-- kcyy end -->
+  </div>
+  <!-- box end -->
+  <div class="ggt mt30"><img src="images/bl_gg.jpg" alt=""></div>
+  <!-- ggt end -->
+  <div class="blms mt25">
+    <div class="bt_tit clear">
+      <h2 class="left"><img src="images/blms_tit.png" alt="博乐名师" /></h2>
+      <div class="blms_nav right">
+        <ul class="clear">
+          <li id="blms1" class="blms_on" onmouseover="blmsView(1)">小学名师</li>
+          <li id="blms2" onmouseover="blmsView(2)">初中名师</li>
+        </ul>
+      </div>
+      <!--/*-------blms_nav结束-------*/-->
+    </div>
+    <div class="blms_menu">
+      <div class="blms_list" id="blms_menu1" style="display:block;">
+        <ul class="clear">
+          <li><a href="subfc.html"><img src="images/blms_pic1.jpg" alt="秋叶" />
+            <p>畅销书作者</p>
+            <h3>缑茹</h3>
+            </a> </li>
+          <li><a href="subfc.html"><img src="images/blms_pic2.jpg" alt="李先知" />
+            <p>英语口语革命者</p>
+            <h3>马益江</h3></a>
+          </li>
+          <li><a href="subfc.html"><img src="images/blms_pic3.jpg" alt="罗子雄" />
+            <p>视觉创新先驱</p>
+            <h3>李XX</h3></a>
+          </li>
+          <li><a href="subfc.html"><img src="images/blms_pic4.jpg" alt="钟平" />
+            <p>数模翻译发明人</p>
+            <h3>张xx</h3></a>
+          </li>
+          <li style="margin:0;"><a href="subfc.html"><img src="images/blms_pic5.jpg" alt="姑苏明月" />
+            <p>时间管理讲师</p>
+            <h3>王xx</h3></a>
+          </li>
+        </ul>
+      </div>
+      <div class="blms_list" id="blms_menu2" style="display:none;">
+        <ul class="clear">
+          <li><a href="subfc.html"><img src="images/blms_pic1.jpg" alt="秋叶" />
+            <p>畅销书作者</p>
+            <h3>赵xx</h3>
+            </a> </li>
+          <li><a href="subfc.html"><img src="images/blms_pic2.jpg" alt="李先知" />
+            <p>英语口语革命者</p>
+            <h3>李先知</h3></a>
+          </li>
+          <li><a href="subfc.html"><img src="images/blms_pic3.jpg" alt="罗子雄" />
+            <p>视觉创新先驱</p>
+            <h3>罗子雄</h3></a>
+          </li>
+          <li><a href="subfc.html"><img src="images/blms_pic4.jpg" alt="钟平" />
+            <p>数模翻译发明人</p>
+            <h3>钟平</h3></a>
+          </li>
+          <li style="margin:0;"><a href="subfc.html"><img src="images/blms_pic5.jpg" alt="姑苏明月" />
+            <p>时间管理讲师</p>
+            <h3>姑苏明月</h3></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--blms_menu end-->
+  </div>
+  <!-- blms end -->
+  <div class="xjxy mt25">
+    <div class="bt_tit clear">
+      <h2 class="left"><img src="images/xjxy_tit.png" alt="星级学员" /></h2>
+      <div class="xjxy_nav right">
+        <ul class="clear">
+          <li id="xjxy1" class="xjxy_on" onmouseover="xjxyView(1)">小学学员</li>
+          <li id="xjxy2" onmouseover="xjxyView(2)">初中学员</li>
+        </ul>
+      </div>
+      <!--/*-------xjxy_nav结束-------*/-->
+    </div>
+    <div class="xjxy_menu">
+      <div class="xjxy_list" id="xjxy_menu1" style="display:block;">
+        <ul class="clear">
+          <li><a href="subxy.html"><img src="images/xjxy_pic1.jpg" alt="学员领奖" />
+            <p>学员领奖</p></a>
+          </li>
+          <li><a href="subxy.html"><img src="images/xjxy_pic2.jpg" alt="学员领奖" />
+            <p>学员领奖</p></a>
+          </li>
+          <li><a href="subxy.html"><img src="images/xjxy_pic3.jpg" alt="课间娱乐" />
+            <p>课间娱乐</p></a>
+          </li>
+          <li  style="margin:0;"><a href="subxy.html"><img src="images/xjxy_pic4.jpg" alt="认真学习" />
+            <p>认真学习</p></a>
+          </li>
+        </ul>
+      </div>
+      <div class="xjxy_list" id="xjxy_menu2" style="display:none;">
+        <ul class="clear">
+          <li><a href="subxy.html"><img src="images/xjxy_pic1.jpg" alt="学员领奖" />
+            <p>学员领奖</p></a>
+          </li>
+          <li><a href="subxy.html"><img src="images/xjxy_pic2.jpg" alt="学员领奖" />
+            <p>学员领奖</p></a>
+          </li>
+          <li><a href="subxy.html"><img src="images/xjxy_pic3.jpg" alt="课间娱乐" />
+            <p>课间娱乐</p></a>
+          </li>
+          <li  style="margin:0;"><a href="subxy.html"><img src="images/xjxy_pic4.jpg" alt="认真学习" />
+            <p>认真学习</p></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--xjxy_menu end-->
+  </div>
+  <!-- xjxy end -->
+  <div class="jxhj mt25">
+    <div class="bt_tit clear"><span class="more"><a href="jxhj.html">更多 &gt;&gt;</a></span><img src="images/jxhj_tit.png" alt="教学环境" /></div>
+    <div class="jxhj_box">
+      <ul class="clear">
+        <li><a href="subhj.html"><img src="images/jxhj_pic1.jpg" alt="教学环境" />
+          <p>教学环境</p></a>
+        </li>
+        <li><a href="subhj.html"><img src="images/jxhj_pic2.jpg" alt="会议室" />
+          <p>会议室</p></a>
+        </li>
+        <li><a href="subhj.html"><img src="images/jxhj_pic3.jpg" alt="会议室" />
+          <p>会议室</p></a>
+        </li>
+        <li  style="margin:0;"><a href="subhj.html"><img src="images/jxhj_pic4.jpg" alt="学校教师" />
+          <p>学校教师</p></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- jxhj end -->
+</div>
+<!-- content end -->
+<div class="footer">
+  <div class="foot_top">
+    <div class="ftcon">Copyright © 2020 使用前必读 博雅教育 www.5duck.xyz:9000</div>
+  </div>
+  <!-- foot_top end -->
+  <div class="foot_bot"><img src="static/images/index/logo.png" alt="" /></div>
+</div>
 </body>
 </html>

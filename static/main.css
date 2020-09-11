@@ -39,21 +39,25 @@ a:active{star:expression(this.onFocus=this.blur());}
 /*---------------    首页样式 ----------------*/
 .top{ width:100%; height:80px; background:#fff;}
 .top_con{ width:1100px; height:80px; margin:0 auto; overflow:hidden;}
-.tel{ font-size:16px; font-weight:bold; width:170px; color:#333333;}
-.sear{ width:280px; height:36px; background:#fff; border:2px solid #10a1f5; border-radius:5px;}
-.sear input{ background:url(../images/search.png) 250px center no-repeat; border:none; width:280px; height:36px; line-height:36px; text-indent:5px;}
+.tel{ font-size:12px; font-weight:bold; width:170px; color:#10a1f5;}
+.address{ font-size:12px; font-weight:bold; width:170px; color:#10a1f5;}
 
 .nav{ width:100%; height:46px; background:#10a1f5;}
 .nav_con{ width:1100px; height:46px; margin:0 auto; overflow:hidden;}
 .nav_con li{ float:left; font-size:16px; height:39px; line-height:39px; margin:7px 4px 0 4px;}
-.nav_con li a{color:#fff; display:block;padding:0 25px;}
+.nav_con li a{color:#fff; display:block;padding:0 15px;}
 .nav_con li a:hover,.nav_con .cur a{ color:#0477c0; background:#f0f0f0;}
 
 
 /* banner-box 效果 */
-.banner{ border-bottom:4px solid #10a1f5; position:relative; min-width:1100px; margin:0px auto; height:500px; overflow:hidden; z-index:1;}
-.banner_show{position:relative; width:100%; height:500px; overflow: hidden}
-.bannger_inbox{position:absolute; top:0px}
+.banner{ border-bottom:4px solid #10a1f5; position:relative; min-width:1100px; margin:0px auto; height:900px; overflow:hidden; z-index:1;}
+.banner_show{position:relative; text-align:center; width:100%; height:900px; overflow: hidden}
+.banner_pre_next{z-index:101; position:relative; display:none; top:215px}
+.banner_pre_next .banner_btn_left{position:absolute; display:block; background:url(../images/left.png) no-repeat; height:70px; left:120px}
+.banner_pre_next .banner_btn_right{position:absolute; display:block; background: url(../images/right.png) no-repeat; height:70px; right:120px}
+.banner_pre_next .banner_btn_right:hover {color:#c00}
+.banner_pre_next .banner_btn_left:hover {color:#c00}
+
 
 .content{ width:1100px; height:auto; margin:0 auto;}
 .bt_tit{ height:55px; line-height:55px;}
