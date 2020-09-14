@@ -241,25 +241,33 @@ $(function(){
     <div class="kcyy right">
       <h2>课程预约</h2>
       <div class="yy_list">
+        <form action="/kcyy" method="post">
         <p>
           <label>姓名：</label>
-          <input name="" type="text" class="input_txt" value="请输入你的姓名！" />
+          <input name="username" type="text" class="input_txt" value="请输入你的姓名！" />
         </p>
         <p>
           <label>电话：</label>
-          <input name="" class="input_txt" type="text" value="请输入你的电话号码！" />
+          <input name="telephone" class="input_txt" type="text" value="请输入你的电话号码！" />
         </p>
         <p>
           <label>年级：</label>
-          <select name="">
+          <select name="class">
             <option>请选择你所在的年级</option>
-            <option>小学</option>
-            <option>初中</option>
+            <option>一年级</option>
+            <option>二年级</option>
+            <option>三年级</option>
+            <option>四年级</option>
+            <option>五年级</option>
+            <option>六年级</option>
+            <option>初中一年级</option>
+            <option>初中二年级</option>
+            <option>初中三年级</option>
           </select>
         </p>
         <p>
           <label>科目：</label>
-          <select name="">
+          <select name="category">
             <option>请选择你所学的科目</option>
             <option>英语</option>
             <option>数学</option>
@@ -268,11 +276,12 @@ $(function(){
         </p>
         <p>
           <label>备注：</label>
-          <textarea name="" cols="" rows="">请输入你的电话号码！</textarea>
+          <textarea name="note" cols="" rows="">如果有一对一辅导的需求,请备注在此处</textarea>
         </p>
         <p>
           <input name="" value="立即预约" type="submit" class="yy_btn" />
         </p>
+        </form>
       </div>
     </div>
     <!-- kcyy end -->

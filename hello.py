@@ -51,7 +51,7 @@ def Register():
 
     if user == "admin" or user == "":
         return Register()
-    db = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='root', db='TESTDB')
+    db = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='root', db='TESTDB', charset='utf8')
     cursor = db.cursor()
     pwd_encry = getEncrytion(password)
     if checkExist(cursor, user):
@@ -61,6 +61,26 @@ def Register():
     else:
         insertUser(db, user, pwd_encry)
         return Login()
+
+@app.route("/kcyy", methods=['post'])
+def Kcyy():
+    user = request.form.get('username')
+    tel = request.form.get('telephone')
+    cla = request.form.get('class')
+    cat = request.form.get('category')
+    note = request.form.get('note')
+    db = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='root', db='TESTDB', charset='utf8')
+    insertKCYY(db, user, tel, cla, cat, note)
+    db.close()
+    return "课程预约成功"
+
+@app.route("/kcyy_sel", methods=['get'])
+def KcyySelect():
+    db = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='root', db='TESTDB', charset='utf8')
+    content = select_KCYY(db)
+    db.close()
+    labels = ["学生", "电话", "年级", "课程", "备注"]
+    return render_template('student.html', labels=labels, content=content)
 
 def getEncrytion(password):
     bpwd = bytes(password, encoding='utf-8')
@@ -72,7 +92,7 @@ def getEncrytion(password):
     return md5_pwd
 
 def checkAuth(user, password):
-    db = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='root', db='TESTDB')
+    db = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='root', db='TESTDB', charset='utf8')
 
     cursor = db.cursor()
 
@@ -126,5 +146,29 @@ def insertUser(db, user, password):
     except Exception as e:
         print("Error: unable to insert data", e)
 
+def insertKCYY(db, user, tel, cla, cat, note):
+    cursor = db.cursor()
+    sql = "INSERT INTO KCYY(USER , TEL , CLASS , CAT, NOTE) VALUES ('%s', '%s', '%s', '%s', '%s')" % (user, tel, cla, cat, note)
+    print(sql)
+    try:
+    # 执行SQL语句
+        cursor.execute(sql)
+        db.commit()
+    except Exception as e:
+        print("Error: unable to insert data", e)
+
+def select_KCYY(db):
+    cursor = db.cursor()
+    sql = "SELECT * FROM KCYY"
+    print(sql)
+    try:
+        # 执行SQL语句
+        cursor.execute(sql)
+        # 获取所有记录列表
+        results = cursor.fetchall()
+        return results
+    except Exception as e:
+        print("Error: unable to insert data", e)
+
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=9000)
+    app.run(host='0.0.0.0', port=9000)
