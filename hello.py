@@ -24,6 +24,10 @@ def welcome():
 def register():
     return render_template('register.html')
 
+@app.route('/lottery.html')
+def lottery():
+    return render_template('lottery.html')
+
 @app.route('/index.html')
 def home():
     return render_template('index.html')
